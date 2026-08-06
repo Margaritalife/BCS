@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Critical Systems — Incident Status</title>
+<style>
+  :root {
+    --bg: #14184d;
+    --panel: #ffffff;
+    --text: #1a1f26;
+    --muted: #5f6b7a;
+    --border: #dde2e8;
+    --green: #1e8e3e;
+    --amber: #ffdf00;
+    --red: #c5221f;
+    --brand: #1f4e78;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14184d;
+      --panel: #1c2128;
+      --text: #e6e9ee;
+      --muted: #9aa4b2;
+      --border: #2c333d;
+      --green: #4caf6a;
+      --amber: #d9a441;
+      --red: #e05a54;
+      --brand: #3f7cb0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--brand);
+    color: #fff;
+    padding: 16px 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  header p {
+    margin: 4px 0 0;
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  .legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 1rem;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot.working { background: var(--green); }
+  .dot.issues { background: var(--amber); }
+  .dot.down { background: var(--red); }
+  .edit-link {
+    font-size: 1.5rem;
+  }
+  .edit-link a {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .edit-link a:hover { text-decoration: underline; }
+  main {
+    padding: 16px 20px 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 600px) {
+    main { grid-template-columns: 1fr; }
+  }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .panel iframe {
+    border: 0;
+    width: 100%;
+    flex: 1;
+    min-height: 900px;
+    background: var(--panel);
+  }
+  .panel.chart iframe { min-height: 420px; }
+  .notice {
+    margin: 0 20px 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: var(--muted);
+  }
+  footer {
+    padding: 12px 20px 24px;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Business Critical Systems — System Health Status</h1>
+    <p>Live view of the Business Critical Systems Status Tracker. Teams can update status directly in the source spreadsheet.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="legend">
+      <span><span class="dot working"></span>Working</span>
+      <span><span class="dot issues"></span>Working with Issues</span>
+      <span><span class="dot down"></span>Not Working</span>
+    </div>
+    <div class="edit-link">
+      Owner updating a status? <a href="https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=sv0n9Z" target="_blank" rel="noopener">Open the tracker to edit &rarr;</a>
+    </div>
+  </div>
+
+  <div class="notice">
+    This page embeds a live, read-only view of the tracker. It refreshes automatically as teams
+    update system statuses.
+  </div>
+
+  <main>
+    <section class="panel chart">
+      <h2>Tier 1 &amp; 2 Progress</h2>
+      <iframe
+        title="Tier 1 and 2 status chart"
+        src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+        width="700"
+        height="800"
+        frameborder="0"
+        scrolling="no"
+        loading="lazy"></iframe>
+    </section>
+    <section class="panel">
+      <h2>Systems</h2>
+      <iframe
+        title="Business Critical Systems table"
+        src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&AllowTyping=True&ActiveCell='Systems'!D4&Item='Systems'!A1%3AF100&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+        width="900"
+        height="1200"
+        frameborder="0"
+        scrolling="no"
+        loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    Business Critical Systems Status Widget · see README.md in this repository for setup and update instructions.
+  </footer>
+</body>
+</html>
