@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Business Critical Systems — Incident Status</title>
+<title>Business Critical System Health Check</title>
 <style>
   :root {
     --bg: #14184d;
@@ -14,7 +14,7 @@
     --green: #1e8e3e;
     --amber: #ffdf00;
     --red: #c5221f;
-    --brand: #1f4e78;
+    --brand: #14184d;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -47,7 +47,7 @@
   }
   header p {
     margin: 4px 0 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     opacity: 0.9;
   }
   .toolbar {
@@ -64,7 +64,7 @@
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
   .legend span {
     display: inline-flex;
@@ -84,7 +84,7 @@
     font-size: 1.5rem;
   }
   .edit-link a {
-    color: var(--brand);
+    color: #836bff;
     font-weight: 600;
     text-decoration: none;
   }
@@ -92,11 +92,16 @@
   main {
     padding: 16px 20px 32px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
     gap: 16px;
   }
   @media (max-width: 600px) {
     main { grid-template-columns: 1fr; }
+  }
+  .chart-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
   .panel {
     background: var(--panel);
@@ -108,7 +113,7 @@
   }
   .panel h2 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 10px 14px;
     border-bottom: 1px solid var(--border);
     color: var(--muted);
@@ -137,44 +142,52 @@
 </head>
 <body>
   <header>
-    <h1>Business Critical Systems — System Health Status</h1>
-    <p>Live view of the Business Critical Systems Status Tracker. Teams can update status directly in the source spreadsheet.</p>
+    <h1>Business Critical System Health Status</h1>
+    <p>Live view of the Business Critical Systems Health Check Tracker (will auto-refresh). Teams can update directly in the source spreadsheet file see link --->.</p>
   </header>
-
   <div class="toolbar">
     <div class="legend">
-      <span><span class="dot working"></span>Working</span>
-      <span><span class="dot issues"></span>Working with Issues</span>
-      <span><span class="dot down"></span>Not Working</span>
     </div>
     <div class="edit-link">
-      Owner updating a status? <a href="https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=sv0n9Z" target="_blank" rel="noopener">Open the tracker to edit &rarr;</a>
+      Product & Platform Teams click here to update <a href="https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=hwcAxt" target="_blank" rel="noopener">Open the tracker to edit &rarr;</a>
     </div>
   </div>
 
   <div class="notice">
-    This page embeds a live, read-only view of the tracker. It refreshes automatically as teams
-    update system statuses.
+
   </div>
 
   <main>
-    <section class="panel chart">
-      <h2>Tier 1 &amp; 2 Progress</h2>
-      <iframe
-        title="Tier 1 and 2 status chart"
-        src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
-        width="700"
-        height="800"
-        frameborder="0"
-        scrolling="no"
-        loading="lazy"></iframe>
-    </section>
+    <div class="chart-stack">
+      <section class="panel chart">
+        <h2>Tier 1 &amp; 2 System Health Check Progress</h2>
+        <iframe
+          title="Tier 1 and 2 System Health check"
+          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+          width="400"
+          height="800"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy"></iframe>
+      </section>
+      <section class="panel chart">
+        <h2>Tier 1 &amp; 2 System Health Check Progress</h2>
+        <iframe
+          title="Tier 1 and 2 System Health check"
+          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+          width="400"
+          height="800"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy"></iframe>
+      </section>
+    </div>
     <section class="panel">
-      <h2>Systems</h2>
+      <h2>Spreadsheet Overview (read-only)</h2>
       <iframe
-        title="Business Critical Systems table"
+        title="Business Critical Systems table (read-only view)"
         src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&AllowTyping=True&ActiveCell='Systems'!D4&Item='Systems'!A1%3AF100&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
-        width="900"
+        width="1200"
         height="1200"
         frameborder="0"
         scrolling="no"
@@ -183,7 +196,7 @@
   </main>
 
   <footer>
-    Business Critical Systems Status Widget · see README.md in this repository for setup and update instructions.
+    Business Critical Systems Status Widget AU GitLab/Service Excellence. Spreadsheet https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=hwcAxt.
   </footer>
 </body>
 </html>
