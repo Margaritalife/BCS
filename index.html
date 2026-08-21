@@ -92,7 +92,7 @@
   main {
     padding: 16px 20px 32px;
     display: grid;
-    grid-template-columns: minmax(360px, 1fr) minmax(0, 1.6fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
     gap: 16px;
   }
   @media (max-width: 600px) {
@@ -125,7 +125,7 @@
     min-height: 900px;
     background: var(--panel);
   }
-  .panel.chart iframe { min-height: 480px; }
+  .panel.chart iframe { min-height: 420px; }
   .notice {
     margin: 0 20px 16px;
     padding: 10px 14px;
@@ -142,14 +142,14 @@
 </head>
 <body>
   <header>
-    <h1>Business Critical System Health Status</h1>
-    <p>Live view of the Business Critical Systems Health Check Tracker (will auto-refresh). Teams can update directly in the source spreadsheet file see link --->.</p>
+    <h1>IT System Status Tracker</h1>
+    <p>Live view of the IT Systems Status Tracker (will auto-refresh). Teams can update directly in the source spreadsheet file see link --->.</p>
   </header>
   <div class="toolbar">
     <div class="legend">
     </div>
     <div class="edit-link">
-      Product & Platform Teams click here to update <a href="https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=hwcAxt" target="_blank" rel="noopener">Open the tracker to edit &rarr;</a>
+      Product & Platform Teams click here to update <a href="https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=Ibv3tS&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0" target="_blank" rel="noopener">Open the tracker to edit &rarr;</a>
     </div>
   </div>
 
@@ -160,23 +160,23 @@
   <main>
     <div class="chart-stack">
       <section class="panel chart">
-        <h2>Tier 1 &amp; 2 System Health Check Progress</h2>
+        <h2>IT Systems by Business Criticality (Tier 1/2)</h2>
         <iframe
-          title="Tier 1 and 2 System Health check"
-          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
-          width="400"
-          height="800"
+          title="IT System Status by Business Criticality (Tier 1/2)"
+          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Business%20Criticality&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+          width="700"
+          height="632"
           frameborder="0"
           scrolling="no"
           loading="lazy"></iframe>
       </section>
       <section class="panel chart">
-        <h2>Tier 1 &amp; 2 System Health Check Progress</h2>
+        <h2>IT Systems by DR Recovery Tier</h2>
         <iframe
-          title="Tier 1 and 2 System Health check"
-          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=Chart%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
-          width="400"
-          height="800"
+          title="IT System by DR Recovery Tier)"
+          src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&wdAllowInteractivity=False&Item=DR%20Tier%20Status&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+          width="700"
+          height="636"
           frameborder="0"
           scrolling="no"
           loading="lazy"></iframe>
@@ -185,8 +185,8 @@
     <section class="panel">
       <h2>Spreadsheet Overview (read-only)</h2>
       <iframe
-        title="Business Critical Systems table (read-only view)"
-        src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&AllowTyping=True&ActiveCell='Systems'!D4&Item='Systems'!A1%3AF100&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+        title="IT Systems Status Progress Table (read-only view)"
+        src="https://uao365.sharepoint.com/sites/ServiceManagement/_layouts/15/Doc.aspx?sourcedoc={bce4e0c8-453a-4778-bae2-5522d2275b6a}&action=embedview&ActiveCell='Systems'!A3&Item=Table1&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
         width="1200"
         height="1200"
         frameborder="0"
@@ -196,7 +196,7 @@
   </main>
 
   <footer>
-    Business Critical Systems Status Widget AU GitLab/Service Excellence. Spreadsheet https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=hwcAxt.
+    Business Critical Systems Status Widget AU GitLab/Service Excellence. Spreadsheet https://uao365.sharepoint.com/:x:/s/ServiceManagement/IQDI4OS8OkV4R7riVSLSJ1tqAWH6EQhpYTLsbVEFaNCCAC8?e=Ibv3tS&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0
   </footer>
 </body>
 </html>
